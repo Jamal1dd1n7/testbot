@@ -19,6 +19,11 @@ def send_welcome(message):
   # Send the greeting message
   bot.reply_to(message, f'Hello {first_name}!')
 
+@bot.message_handler(messages=['text'])
+def echo_message(message):
+  # Echo the received message back to the user
+  bot.reply_to(message, message.text)
+
 
 # Start the bot
 print('Bot is running...')
